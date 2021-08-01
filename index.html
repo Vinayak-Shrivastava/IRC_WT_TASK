@@ -25,13 +25,14 @@
 </div>
 
 <font color="white"> 
-<div class="container" >            <!-- buttons-->
+<div class="container" >            <!-- custom navbar-->
 <form style="display: inline;" action="#"><input style="width:16.5%;background-color: #0099ff;border-radius:8px;" type="submit" value="All" /></form><form style="display: inline;" action="#"><input style="width:16.5%;background-color: #0099ff;border-radius:8px;" type="submit" value="North America" /></form><form style="display: inline;" action="#"><input style="width:16.5%;background-color: #0099ff;border-radius:8px;" type="submit" value="South America" /></form><form style="display: inline;" action="#"><input style="width:16.5%;background-color: #0099ff;border-radius:8px;" type="submit" value="Asia" /></form><form style="display: inline;" action="#"><input style="width:16.5%;background-color: #0099ff;border-radius:8px;" type="submit" value="Europe" /></form><form style="display: inline;" action="#"><input style="width:16.5%;background-color: #0099ff;border-radius:8px;" type="submit" value="Australia" /></form>
 <center>
 </font>
 
+<div id="cards">
   <div class="row">
-<div class="col-md-4">                  <!--Cards for different universitites-->
+<div class="col-md-4">
     <div class="card" style="background-color:#ffffff;border-radius:7px;" >
       <h3><br>Australian National University</h3>
       <p>Australia</p>
@@ -93,7 +94,7 @@
       <p>United Kindgdom</p>
       <p>Expenses: 10-12 Lakhs</p>
       <p><font color="red">Deadline: Sept 15,2019</font></p>
-     <div style="background-color:#e6e6e6;border-radius7px;"><br>
+     <div style="background-color:#e6e6e6;border-radius:7px;"><br>
       <p><a href="#"> Apply </a> </p><br>
      </div>
     </div>
@@ -111,13 +112,33 @@
      </div>
     </div>
 </div>
-  
+</div>  
 </div>
+
+
+
+
+
+
+
+<br>
+
+<button onclick="add_card()" style="position:relative;width:10%;background-color: #0099ff;border-radius:8px;" type="submit"> Add Card</button>    <!--adds cards left to right-->
 
 <br><br>
-
 </center>
 </div>
+<script>
+a=6 //number of cards.
+function add_card()
+{
+a++;                 
+document.getElementById("cards").innerHTML += (a%3==0?"<div class=\"row\">": " ") + "<div class=\"col-md-4\"><div class=\"card\" style=\"background-color:#ffffff;border-radius:7px;\" ><h3><br>UNSW Sydney</h3><p>Australia</p><p>Expenses: 10-12 Lakhs</p><p><font color=\"red\">Deadline: Sept 15,2019</font></p><div style=\"background-color:#e6e6e6;border-radius:7px;\"><br><p><a href=\"# \"> Apply </a> </p><br></div></div></div>";
+}                //if a is a multiple of 3 then 3 cards are there in the current row hence add a new row otherwise add a card to rightmost.
+
+
+
+</script>
 
 </body>
 </html>
